@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+  <h1 class="titel">Gebruikersoverzicht</h1>
+
+  <ul class="user-list">
+    <% for (let i=0; i < users.length; i++) { %>
+      <li>
+        <strong>Naam:</strong>
+        <%= users[i].name %> <br>
+          <strong>Email:</strong>
+          <%= users[i].email %> <br>
+            <strong>Budget:</strong>
+            <%= users[i].budget.monthlyLimit%> <br>
+      </li>
+      <% } %>
+  </ul>
+
+  <a class="return" href="/">Terug naar de Homepage</a>
+  <%- include("partials/footer") %>

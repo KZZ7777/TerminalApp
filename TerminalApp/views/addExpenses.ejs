@@ -1,0 +1,77 @@
+<%- include("partials/header") %>
+    <h1>Uitgave Toevoegen</h1>
+
+    <form action="/users/<%=user.id%>/expenses/addExpenses" method="POST">
+
+        <label for="description">Beschrijving:</label>
+        <input type="text" name="description" required><br><br>
+
+        <label for="amount">Bedrag:</label>
+        <input type="number" step="any" name="amount" required><br><br>
+
+        <label for="date">Datum:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="currency">Munteenheid:</label>
+        <select name="currency" required>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+        </select><br><br>
+
+        <label for="category">Categorie:</label>
+        <input type="text" name="category" required><br><br>
+
+        <label for="tags">Tags (gescheiden houden met komma's):</label>
+        <input type="text" name="tags" required><br><br>
+
+        <label for="isPaid">Is het betaald?</label>
+        <input type="radio" name="isPaid" value="yes" required> Ja
+        <input type="radio" name="isPaid" value="no" required> Nee<br><br>
+
+        <label for="method">Betaalmethode:</label>
+        <select name="method" id="payment-method" required>
+            <option value="Paypal">Paypal</option>
+            <option value="Cash">Cash</option>
+            <option value="CreditCard">Credit Card</option>
+            <option value="BankTransfer">Bank Transfer</option>
+
+        </select><br><br>
+
+        <div id="card-info">
+            <label for="cardNumber">Kaartnummer:</label>
+            <input type="text" name="cardNumber"><br><br>
+
+            <label for="expiryDate">Vervaldatum (mm/yy):</label>
+            <input type="text" name="expiryDate"><br><br>
+        </div>
+
+
+        <div id="bank-info" style="display: none;">
+            <label for="bankAccountNumber">Bankrekeningnummer:</label>
+            <input type="text" name="bankAccountNumber"><br><br>
+        </div>
+
+        <button type="submit">Toevoegen</button>
+    </form>
+
+
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function () {
+            const cardInfo = document.getElementById('card-info');
+            const bankInfo = document.getElementById('bank-info');
+            const selectedMethod = this.value;
+
+            cardInfo.style.display = 'none';
+            bankInfo.style.display = 'none';
+
+            if (selectedMethod === 'CreditCard') {
+                cardInfo.style.display = 'block';
+            } else if (selectedMethod === 'BankTransfer') {
+                bankInfo.style.display = 'block';
+            }
+        });
+    </script>
+
+
+    <%- include("partials/footer") %>

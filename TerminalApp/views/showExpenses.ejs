@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+  <% var search=typeof search !=='undefined' ? search : '' ; %>
+    <% var type=typeof type !=='undefined' ? type : '' ; %>
+      <h1>Transacties bekijken</h1>
+      <form method="GET" action="/showExpenses">
+        <label for="search">Zoek:</label>
+        <input type="text" id="search" name="search" value="<%= search || '' %>">
+        <label for="type">Filter type:</label>
+        <select name="type" id="type">
+          <option value="">Alles</option>
+          <option value="income" <%=type==='income' ? 'selected' : '' %>>Inkomsten</option>
+          <option value="expense" <%=type==='expense' ? 'selected' : '' %>>Uitgaven</option>
+        </select>
+        <button type="submit">Filteren</button>
+      </form>
+
+      <% users.forEach(user=> { %>
+        <h2>Gebruiker: <%= user.name %>
+        </h2>
+        <% if (Array.isArray(user.expenses) && user.expenses.length> 0) { %>
+          <ul>
+            <% user.expenses.forEach(expense=> { %>
+              <li>
+                Beschrijving: <%= expense.description %><br>
+                  Bedrag: <%= expense.amount %>
+                    <%= expense.currency || 'EUR' %><br>
+                      Datum: <%= expense.date %><br>
+                        Categorie: <%= expense.category %><br>
+                          Betaald: <%= expense.isPaid ? 'Ja' : 'Nee' %><br>
+                            <form action="/users/<%=user.id%>/expenses/<%=expense.id%>/delete" method="POST">
+                              <button type="submit">Verwijderen</button>
+                            </form>
+                            <a href="/users/<%=user.id%>/expenses/<%=expense.id%>/update">Bewerken</a>
+              </li>
+              <% }) %>
+          </ul>
+          <% } else { %>
+            <p>Geen uitgaven gevonden</p>
+            <% } %>
+              <% }) %>
+
+
+                <a href="/">Terug naar de Homepage</a>
+                <%- include("partials/footer") %>

@@ -1,0 +1,43 @@
+<%- include("partials/header") %>
+    <main>
+        <h1 class="titel">Welkom bij de terminal app</h1>
+
+        <!-- MESSAGE AANPASSEN MET KLEUTREN GROEN /ROOD  IF -->
+        <% if (message) { %>
+            <p class="error">
+                <%= message.message %>
+            </p>
+            <% } %>
+
+
+                <p>Wat wenst u te doen?</p>
+                <ul>
+                    <% if (user) { %>
+                        <!-- Knoppen zichtbaar voor ingelogde gebruikers -->
+                        <li>
+                            <a href="/users" class="btn">Gebruiker bekijken</a>
+                        </li>
+                        <li>
+                            <a href="/addExpenses?id=<%= user.id %>" class="btn">Kosten toevoegen</a>
+                        </li>
+                        <li>
+                            <a href="/addIncomes?id=<%= user.id %>" class="btn">Inkomen toevoegen</a>
+                        </li>
+                        <li>
+                            <a href="/showExpenses?id=<%= user.id%>" class="btn">Transacties bekijken</a>
+                        </li>
+                        <li>
+                            <a href="/logout" class="btn">Uitloggen</a>
+                        </li>
+                        <% } else { %>
+                            <!-- Knoppen zichtbaar voor niet-ingelogde gebruikers -->
+                            <li>
+                                <a href="/login" class="btn">Inloggen</a>
+                            </li>
+                            <li>
+                                <a href="/addUsers" class="btn">Gebruiker toevoegen</a>
+                            </li>
+                            <% } %>
+                </ul>
+    </main>
+    <%- include("partials/footer") %>

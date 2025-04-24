@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+    <% if (message) { %>
+        <div class="alert <%= message.type === 'success' ? 'alert-success' : 'alert-danger' %>">
+            <%= message.message %>
+        </div>
+        <% } %>
+
+
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <label for="username">E-mailadres:</label>
+                <input type="text" name="username" id="username" required>
+                <br>
+                <label for="password">Wachtwoord:</label>
+                <input type="password" name="password" id="password" required>
+                <br>
+                <button type="submit">Inloggen</button>
+            </form>
+
+
+            <a href="/">Terug naar de Homepage</a>
+            <%- include("partials/footer") %>

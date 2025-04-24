@@ -1,0 +1,85 @@
+{
+    "user": [
+        {
+            "id": "1",
+            "name": "Kaoutar Zaïd",
+            "email": "kaoutarzaid@ap.be",
+            "expenses": [
+                {
+                    "id": "1",
+                    "description": "Skincare product gekocht",
+                    "amount": 25.5,
+                    "date": "2024-09-30 15:00",
+                    "currency": "EUR",
+                    "paymentMethod": {
+                        "method": "Credit Card",
+                        "cardDetails": {
+                            "cardNumber": "**** **** **** 7777",
+                            "expiryDate": "12/30"
+                        }
+                    },
+                    "isIncoming": false,
+                    "category": "Skincare",
+                    "tags": [
+                        "Verzorging",
+                        "Beauty"
+                    ],
+                    "isPaid": true
+                },
+                {
+                    "id": "2",
+                    "description": "BMW M8",
+                    "amount": "200000",
+                    "date": "2024/10/23",
+                    "currency": "EUR",
+                    "paymentMethod": {
+                        "method": "CREDIT CARD",
+                        "cardDetails": {
+                            "cardNumber": "7777 7777 7777 7777",
+                            "expiryDate": "26/12"
+                        }
+                    },
+                    "isIncoming": false,
+                    "category": "AUTO",
+                    "tags": "car, BMW M 8",
+                    "isPaid": true
+                }
+            ],
+            "budget": {
+                "monthlyLimit": 5000,
+                "notificationThreshold": 0.9,
+                "isActive": true
+            }
+        },
+        {
+            "id": "2",
+            "name": "test",
+            "email": "test@hotmail.com",
+            "expenses": [
+                {
+                    "id": "1",
+                    "description": "tomaten",
+                    "amount": "10",
+                    "date": "2024/12/14",
+                    "currency": "EUR",
+                    "paymentMethod": {
+                        "method": "CreditCard",
+                        "cardDetails": {
+                            "cardNumber": "654123548965422454",
+                            "expiryDate": "2026/11"
+                        }
+                    },
+                    "isIncoming": false,
+                    "category": "eten",
+                    "tags": "food, eten , gezond, groente",
+                    "isPaid": true
+                }
+            ],
+            "budget": {
+                "monthlyLimit": 1200,
+                "notificationThreshold": 0,
+                "isActive": false
+            }
+        }
+    ]
+}

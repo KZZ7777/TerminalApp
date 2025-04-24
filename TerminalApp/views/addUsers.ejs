@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+
+    <% if (message) { %>
+        <div class="alert <%= message.type === 'success' ? 'alert-success' : 'alert-danger' %>">
+            <%= message.message %>
+        </div>
+        <% } %>
+
+            <h1>Voeg een nieuwe gebruiker toe</h1>
+
+            <form action="/addUsers" method="POST">
+                <label for="id">ID:</label>
+                <input type="text" name="id" required><br><br>
+
+                <label for="name">Naam:</label>
+                <input type="text" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" required><br><br>
+
+                <label for="password">Wachtwoord:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <label for="monthlyLimit">Maandelijks budget:</label>
+                <input type="number" step="5.00" name="monthlyLimit" required><br><br>
+
+                <button type="submit">Voeg een gebruiker toe</button>
+            </form>
+            <br>
+            <a class="showUsers" href="/users">Gebruikers bekijken</a> <br>
+
+
+
+            <%- include("partials/footer") %>

@@ -1,0 +1,221 @@
+body {
+  background-color: #1e1e2f;
+  color: #c7c7d9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  border-bottom: 2px solid #3e3e5e;
+  padding-bottom: 10px;
+  margin: 15px;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #3e3e5e;
+  padding-bottom: 5px;
+  margin: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-left: 1em;
+}
+
+p, label {
+  color: #c7c7d9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #2a2a3d;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+button {
+  background-color: #3e3e5e;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}
+
+button:hover {
+  background-color: #5e5e7e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  width: 99%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #2a2a3d;
+  border: 1px solid #3e3e5e;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+select {
+  width: 100.5%;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+form {
+  background-color: #2a2a3d;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="date"] {
+  width: 99%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #2a2a3d;
+  border: 1px solid #3e3e5e;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: inherit; 
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+
+#card-info {
+  display: none;
+}
+
+.titel {
+  text-align: center;
+}
+
+.user-list li {
+  position: relative;
+  margin: 10px;
+}
+
+.user-list a {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #8ab4f8;    
+  color: #1e1e2f;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.user-list a:hover {
+  background-color: #a0c4ff;
+}
+
+footer {
+   margin-top: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #1e1e2f;
+  color: #5e5e7e;
+  position: relative; 
+  width: 100%;
+  bottom: 0;
+}
+
+.return,
+.showUsers{
+  display: block;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#card-info,
+#bank-info {
+  margin-bottom: 15px;
+}
+
+form button {
+  display: block;
+  margin: 20px auto;
+}
+
+.alert {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff; /* Witte tekstkleur */
+}
+
+.alert-danger {
+  background-color: #dc3545; /* Rood */
+  border: 1px solid #c82333;
+}
+
+
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  li {
+      padding: 10px;
+  }
+
+  .user-list a {
+      position: static;
+      display: block;
+      margin-top: 10px;
+  }
+}
